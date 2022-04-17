@@ -1,4 +1,4 @@
-package dev.ntokozos.backtobasics.queue;
+package dev.ntokozos.dsbasics.queue;
 
 public interface BasicQueue<E> {
     /**

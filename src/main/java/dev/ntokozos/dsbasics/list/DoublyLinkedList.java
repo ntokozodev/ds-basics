@@ -1,4 +1,4 @@
-package dev.ntokozos.backtobasics.list;
+package dev.ntokozos.dsbasics.list;
 
 public class DoublyLinkedList<T> implements BasicList<T> {
     private DoublyNode<T> head;

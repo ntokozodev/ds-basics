@@ -1,8 +1,8 @@
-package dev.ntokozos.backtobasics.queue;
+package dev.ntokozos.dsbasics.queue;
 
 import java.util.NoSuchElementException;
 
-import dev.ntokozos.backtobasics.common.BasicNode;
+import dev.ntokozos.dsbasics.common.BasicNode;
 
 public class ListQueue<T> implements BasicQueue<T> {
 

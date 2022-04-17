@@ -1,8 +1,8 @@
-package dev.ntokozos.backtobasics.stack;
+package dev.ntokozos.dsbasics.stack;
 
 import java.util.EmptyStackException;
 
-import dev.ntokozos.backtobasics.common.BasicNode;
+import dev.ntokozos.dsbasics.common.BasicNode;
 
 public class ListStack<T> implements BasicStack<T> {
     private BasicNode<T> top;

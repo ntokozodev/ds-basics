@@ -1,11 +1,11 @@
-package dev.ntokozos.backtobasics;
+package dev.ntokozos.dsbasics;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 
-import dev.ntokozos.backtobasics.list.DoublyLinkedList;
-import dev.ntokozos.backtobasics.list.SinglyLinkedList;
+import dev.ntokozos.dsbasics.list.DoublyLinkedList;
+import dev.ntokozos.dsbasics.list.SinglyLinkedList;
 
 /**
  * Hello good people!

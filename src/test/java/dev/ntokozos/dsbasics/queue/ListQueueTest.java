@@ -1,5 +1,6 @@
-package dev.ntokozos.backtobasics.queue;
+package dev.ntokozos.dsbasics.queue;
 
+import dev.ntokozos.dsbasics.queue.ListQueue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 

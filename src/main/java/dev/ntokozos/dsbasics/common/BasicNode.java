@@ -1,4 +1,4 @@
-package dev.ntokozos.backtobasics.common;
+package dev.ntokozos.dsbasics.common;
 
 public class BasicNode<T> {
     private T data;

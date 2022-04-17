@@ -1,4 +1,4 @@
-package dev.ntokozos.backtobasics.stack;
+package dev.ntokozos.dsbasics.stack;
 
 public interface BasicStack<E> {
     /**

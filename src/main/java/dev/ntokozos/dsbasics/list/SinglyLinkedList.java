@@ -1,6 +1,6 @@
-package dev.ntokozos.backtobasics.list;
+package dev.ntokozos.dsbasics.list;
 
-import dev.ntokozos.backtobasics.common.BasicNode;
+import dev.ntokozos.dsbasics.common.BasicNode;
 
 public class SinglyLinkedList<T> implements BasicList<T> {
     private BasicNode<T> head;

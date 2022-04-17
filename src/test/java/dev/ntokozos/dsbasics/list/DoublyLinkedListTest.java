@@ -1,5 +1,7 @@
-package dev.ntokozos.backtobasics.list;
+package dev.ntokozos.dsbasics.list;
 
+import dev.ntokozos.dsbasics.list.SinglyLinkedList;
+import dev.ntokozos.dsbasics.list.DoublyLinkedList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -8,42 +10,42 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-public class SinglyLinkedListTest {
+public class DoublyLinkedListTest {
     @Nested
-    class appendFront {
+    class insertFront {
         @Test
         public void shouldAddInitialValueToTailAndHead_givenListIsEmpty() {
             // Arrange
-            SinglyLinkedList<String> list = new SinglyLinkedList<>(null);
+            DoublyLinkedList<String> list = new DoublyLinkedList<>();
 
             // Act
             list.insertFront("Ntokozo");
 
             // Assert
-            assertEquals(list.peekFirst(), list.peekLast());
+            assertEquals(list.peekLast(), list.peekFirst());
         }
 
         @Test
         public void shouldAppendToHead_givenListIsNotEmpty() {
             // Arrange
-            SinglyLinkedList<String> list = new SinglyLinkedList<>("Seed");
+            DoublyLinkedList<String> list = new DoublyLinkedList<>("Seed");
             String input = "Ntokozo";
 
             // Act
             list.insertFront(input);
 
             // Assert
-            assertEquals(input, list.peekFirst());
+            assertEquals(list.peekFirst(), input);
             assertNotEquals(list.peekLast(), list.peekFirst());
         }
     }
 
     @Nested
-    class appendBack {
+    class insertBack {
         @Test
         public void shouldAddInitialValueToTailAndHead_givenListIsEmpty() {
             // Arrange
-            SinglyLinkedList<String> list = new SinglyLinkedList<>(null);
+            DoublyLinkedList<String> list = new DoublyLinkedList<>();
 
             // Act
             list.insertBack("Ntokozo");
@@ -55,7 +57,7 @@ public class SinglyLinkedListTest {
         @Test
         public void shouldAppendToTail_givenListIsNotEmpty() {
             // Arrange
-            SinglyLinkedList<String> list = new SinglyLinkedList<>(null);
+            DoublyLinkedList<String> list = new DoublyLinkedList<>();
             String input = "Ntokozo";
 
             // Pre-Act
@@ -65,59 +67,17 @@ public class SinglyLinkedListTest {
             list.insertBack(input);
 
             // Assert
-            assertEquals(input, list.peekLast());
+            assertEquals(list.peekLast(), input);
             assertNotEquals(list.peekLast(), list.peekFirst());
         }
     }
 
     @Nested
-    class removeFront {
+    class removeLast {
         @Test
         public void shouldReturnNull_givenListIsEmpty() {
             // Arrange
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>(null);
-
-            // Act
-            Integer deleted = list.removeFirst();
-
-            // Assert
-            assertEquals(null, deleted);
-        }
-
-        @Test
-        public void shouldRemoveFromHeadAndReturnValue_givenListHasSingleItem() {
-            // Arrange
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>(2001);
-
-            // Act
-            Integer deleted = list.removeFirst();
-
-            // Assert
-            assertEquals(2001, deleted);
-        }
-
-        @Test
-        public void shouldRemoveFromHeadAndReturnValue_givenListHasManyItems() {
-            // Arrange
-            Integer expectedDelete = 2000;
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>(2001);
-            list.insertFront(expectedDelete);
-            list.insertBack(2002);
-
-            // Act
-            Integer deleted = list.removeFirst();
-
-            // Assert
-            assertEquals(expectedDelete, deleted);
-        }
-    }
-
-    @Nested
-    class removeBack {
-        @Test
-        public void shouldReturnNull_givenListHasIsEmpty() {
-            // Arrange
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>(null);
+            DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
 
             // Act
             Integer deleted = list.removeLast();
@@ -129,7 +89,7 @@ public class SinglyLinkedListTest {
         @Test
         public void shouldRemoveFromTailAndReturnValue_givenListHasSingleItem() {
             // Arrange
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>(2001);
+            DoublyLinkedList<Integer> list = new DoublyLinkedList<>(2001);
 
             // Act
             Integer deleted = list.removeLast();
@@ -142,7 +102,7 @@ public class SinglyLinkedListTest {
         public void shouldRemoveFromTailAndReturnValue_givenListHasManyItems() {
             // Arrange
             Integer expectedDelete = 2002;
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>(2001);
+            DoublyLinkedList<Integer> list = new DoublyLinkedList<>(2001);
             list.insertFront(2000);
             list.insertBack(expectedDelete);
 
@@ -155,11 +115,53 @@ public class SinglyLinkedListTest {
     }
 
     @Nested
+    class removeFirst {
+        @Test
+        public void shouldReturnNull_givenListIsEmpty() {
+            // Arrange
+            DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+
+            // Act
+            Integer deleted = list.removeFirst();
+
+            // Assert
+            assertEquals(null, deleted);
+        }
+
+        @Test
+        public void shouldRemoveFromHeadAndReturnValue_givenListHasSingleItem() {
+            // Arrange
+            DoublyLinkedList<Integer> list = new DoublyLinkedList<>(2001);
+
+            // Act
+            Integer deleted = list.removeFirst();
+
+            // Assert
+            assertEquals(2001, deleted);
+        }
+
+        @Test
+        public void shouldRemoveFromHeadAndReturnValue_givenListHasManyItems() {
+            // Arrange
+            Integer expectedDelete = 2000;
+            DoublyLinkedList<Integer> list = new DoublyLinkedList<>(2001);
+            list.insertFront(expectedDelete);
+            list.insertBack(2002);
+
+            // Act
+            Integer deleted = list.removeFirst();
+
+            // Assert
+            assertEquals(expectedDelete, deleted);
+        }
+    }
+
+    @Nested
     class peekFirst {
         @Test
         public void shouldReturnNull_givenListIsEmpty() {
             // Arrange
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
+            DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
 
             // Act
             Integer first = list.peekFirst();
@@ -170,28 +172,29 @@ public class SinglyLinkedListTest {
 
         @Test
         public void shouldReturnFirstElement_givenListHasSingleItem() {
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>(2000);
+            // Arrange
+            DoublyLinkedList<Integer> list = new DoublyLinkedList<>(1000);
 
             // Act
             Integer first = list.peekFirst();
 
             // Assert
-            assertEquals(2000, first);
+            assertEquals(1000, first);
         }
 
         @Test
-        public void shouldReturnFirstElement_givenListHasManyItems() {
+        public void shouldFirstElement_givenListHasManyItems() {
             // Arrange
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>(2000);
-            list.insertFront(1999);
-            list.insertBack(2001);
-            list.insertBack(2002);
+            DoublyLinkedList<Integer> list = new DoublyLinkedList<>(1000);
+            list.insertBack(1001);
+            list.insertBack(1002);
+            list.insertBack(1003);
 
             // Act
             Integer first = list.peekFirst();
 
             // Assert
-            assertEquals(1999, first);
+            assertEquals(1000, first);
         }
     }
 
@@ -200,7 +203,7 @@ public class SinglyLinkedListTest {
         @Test
         public void shouldReturnNull_givenListIsEmpty() {
             // Arrange
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
+            DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
 
             // Act
             Integer last = list.peekLast();
@@ -210,27 +213,15 @@ public class SinglyLinkedListTest {
         }
 
         @Test
-        public void shouldReturnLastElement_givenListHasSingleItem() {
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>(2000);
+        public void shouldLastElement_givenListHasItems() {
+            // Arrange
+            DoublyLinkedList<Integer> list = new DoublyLinkedList<>(1000);
 
             // Act
-            Integer last = list.peekLast();
+            int last = list.peekLast();
 
             // Assert
-            assertEquals(2000, last);
-        }
-
-        @Test
-        public void shouldReturnLastElement_givenListHasManyItems() {
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>(2000);
-            list.insertBack(2001);
-            list.insertBack(2002);
-
-            // Act
-            Integer last = list.peekLast();
-
-            // Assert
-            assertEquals(2002, last);
+            assertEquals(1000, last);
         }
     }
 
@@ -251,7 +242,7 @@ public class SinglyLinkedListTest {
         @Test
         public void shouldThrowException_givenNegativeIndex() {
             // Arrange
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>(2000);
+            DoublyLinkedList<Integer> list = new DoublyLinkedList<>(2000);
 
             // Act
             Exception exception = assertThrows(IndexOutOfBoundsException.class, () -> list.peekAt(-2));
@@ -263,7 +254,7 @@ public class SinglyLinkedListTest {
         @Test
         public void shouldThrowException_givenOutOfBoundIndex() {
             // Arrange
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>(2000);
+            DoublyLinkedList<Integer> list = new DoublyLinkedList<>(2000);
             list.insertBack(2001);
 
             // Act
@@ -276,7 +267,7 @@ public class SinglyLinkedListTest {
         @Test
         public void shouldReturnElement_givenValidIndex() {
             // Arrange
-            SinglyLinkedList<Integer> list = new SinglyLinkedList<>(2000);
+            DoublyLinkedList<Integer> list = new DoublyLinkedList<>(2000);
             list.insertBack(2001);
             list.insertBack(2002);
             list.insertBack(2003);

@@ -1,4 +1,4 @@
-package dev.ntokozos.backtobasics.list;
+package dev.ntokozos.dsbasics.list;
 
 public interface BasicList<E> {
     /**

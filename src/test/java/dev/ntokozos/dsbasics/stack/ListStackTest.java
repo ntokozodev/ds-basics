@@ -1,5 +1,6 @@
-package dev.ntokozos.backtobasics.stack;
+package dev.ntokozos.dsbasics.stack;
 
+import dev.ntokozos.dsbasics.stack.ListStack;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
