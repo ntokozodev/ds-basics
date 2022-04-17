@@ -1,7 +1,5 @@
 package dev.ntokozos.dsbasics.list;
 
-import dev.ntokozos.dsbasics.list.SinglyLinkedList;
-import dev.ntokozos.dsbasics.list.DoublyLinkedList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -11,8 +9,10 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 public class DoublyLinkedListTest {
+
     @Nested
     class insertFront {
+
         @Test
         public void shouldAddInitialValueToTailAndHead_givenListIsEmpty() {
             // Arrange
@@ -42,6 +42,7 @@ public class DoublyLinkedListTest {
 
     @Nested
     class insertBack {
+
         @Test
         public void shouldAddInitialValueToTailAndHead_givenListIsEmpty() {
             // Arrange
@@ -74,6 +75,7 @@ public class DoublyLinkedListTest {
 
     @Nested
     class removeLast {
+
         @Test
         public void shouldReturnNull_givenListIsEmpty() {
             // Arrange
@@ -116,6 +118,7 @@ public class DoublyLinkedListTest {
 
     @Nested
     class removeFirst {
+
         @Test
         public void shouldReturnNull_givenListIsEmpty() {
             // Arrange
@@ -158,6 +161,7 @@ public class DoublyLinkedListTest {
 
     @Nested
     class peekFirst {
+
         @Test
         public void shouldReturnNull_givenListIsEmpty() {
             // Arrange
@@ -200,6 +204,7 @@ public class DoublyLinkedListTest {
 
     @Nested
     class peekLast {
+
         @Test
         public void shouldReturnNull_givenListIsEmpty() {
             // Arrange
@@ -227,6 +232,7 @@ public class DoublyLinkedListTest {
 
     @Nested
     class peekAt {
+
         @Test
         public void shouldReturnNull_givenListIsEmpty() {
             // Arrange

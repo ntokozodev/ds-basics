@@ -1,6 +1,5 @@
 package dev.ntokozos.dsbasics.list;
 
-import dev.ntokozos.dsbasics.list.SinglyLinkedList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -10,8 +9,10 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 public class SinglyLinkedListTest {
+
     @Nested
     class appendFront {
+
         @Test
         public void shouldAddInitialValueToTailAndHead_givenListIsEmpty() {
             // Arrange
@@ -41,6 +42,7 @@ public class SinglyLinkedListTest {
 
     @Nested
     class appendBack {
+
         @Test
         public void shouldAddInitialValueToTailAndHead_givenListIsEmpty() {
             // Arrange
@@ -73,6 +75,7 @@ public class SinglyLinkedListTest {
 
     @Nested
     class removeFront {
+
         @Test
         public void shouldReturnNull_givenListIsEmpty() {
             // Arrange
@@ -115,6 +118,7 @@ public class SinglyLinkedListTest {
 
     @Nested
     class removeBack {
+
         @Test
         public void shouldReturnNull_givenListHasIsEmpty() {
             // Arrange
@@ -157,6 +161,7 @@ public class SinglyLinkedListTest {
 
     @Nested
     class peekFirst {
+
         @Test
         public void shouldReturnNull_givenListIsEmpty() {
             // Arrange
@@ -198,6 +203,7 @@ public class SinglyLinkedListTest {
 
     @Nested
     class peekLast {
+
         @Test
         public void shouldReturnNull_givenListIsEmpty() {
             // Arrange
@@ -237,6 +243,7 @@ public class SinglyLinkedListTest {
 
     @Nested
     class peekAt {
+
         @Test
         public void shouldReturnNull_givenListIsEmpty() {
             // Arrange
