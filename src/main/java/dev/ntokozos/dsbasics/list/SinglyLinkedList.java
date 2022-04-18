@@ -1,10 +1,10 @@
 package dev.ntokozos.dsbasics.list;
 
-import dev.ntokozos.dsbasics.common.BasicNode;
+import dev.ntokozos.dsbasics.common.SinglyNode;
 
 public class SinglyLinkedList<T> implements BasicList<T> {
-    private BasicNode<T> head;
-    private BasicNode<T> tail;
+    private SinglyNode<T> head;
+    private SinglyNode<T> tail;
     private int size = 0;
 
     public SinglyLinkedList() {
@@ -12,7 +12,7 @@ public class SinglyLinkedList<T> implements BasicList<T> {
 
     public SinglyLinkedList(T seed) {
         if (seed != null) {
-            BasicNode<T> seedNode = new BasicNode<T>(seed);
+            SinglyNode<T> seedNode = new SinglyNode<T>(seed);
             tail = seedNode;
             head = seedNode;
             size++;
@@ -21,7 +21,7 @@ public class SinglyLinkedList<T> implements BasicList<T> {
 
     @Override
     public void insertFront(T data) {
-        BasicNode<T> newNode = new BasicNode<T>(data);
+        SinglyNode<T> newNode = new SinglyNode<T>(data);
         newNode.setNext(head);
 
         if (isEmpty()) {
@@ -34,7 +34,7 @@ public class SinglyLinkedList<T> implements BasicList<T> {
 
     @Override
     public void insertBack(T data) {
-        BasicNode<T> newNode = new BasicNode<T>(data);
+        SinglyNode<T> newNode = new SinglyNode<T>(data);
 
         if (isEmpty()) {
             head = newNode;
@@ -74,7 +74,7 @@ public class SinglyLinkedList<T> implements BasicList<T> {
             return deleted;
         }
 
-        BasicNode<T> current = head;
+        SinglyNode<T> current = head;
         while (current.getNext().getNext() != null) {
             current = current.getNext();
         }
@@ -123,7 +123,7 @@ public class SinglyLinkedList<T> implements BasicList<T> {
             return tail.getData();
         }
 
-        BasicNode<T> current = head.getNext();
+        SinglyNode<T> current = head.getNext();
         for (int i = 1; i < index; i++) {
             current = current.getNext();
         }
@@ -135,7 +135,7 @@ public class SinglyLinkedList<T> implements BasicList<T> {
      * A naive print it will only work with primitive types
      */
     public void printPrimitiveDataTypes() {
-        BasicNode<T> current = head;
+        SinglyNode<T> current = head;
         System.out.print("Head -> ");
 
         while (current != null) {

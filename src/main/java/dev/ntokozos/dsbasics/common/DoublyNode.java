@@ -1,4 +1,4 @@
-package dev.ntokozos.dsbasics.list;
+package dev.ntokozos.dsbasics.common;
 
 public class DoublyNode<T> {
     private T data;

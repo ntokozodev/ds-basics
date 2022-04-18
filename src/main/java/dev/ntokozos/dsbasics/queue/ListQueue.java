@@ -2,12 +2,12 @@ package dev.ntokozos.dsbasics.queue;
 
 import java.util.NoSuchElementException;
 
-import dev.ntokozos.dsbasics.common.BasicNode;
+import dev.ntokozos.dsbasics.common.SinglyNode;
 
 public class ListQueue<T> implements BasicQueue<T> {
 
-    private BasicNode<T> first;
-    private BasicNode<T> last;
+    private SinglyNode<T> first;
+    private SinglyNode<T> last;
     private int size = 0;
 
     public ListQueue() {
@@ -15,7 +15,7 @@ public class ListQueue<T> implements BasicQueue<T> {
 
     public ListQueue(T seed) {
         if (seed != null) {
-            BasicNode<T> newElementNode = new BasicNode<>(seed);
+            SinglyNode<T> newElementNode = new SinglyNode<>(seed);
             first = newElementNode;
             last = newElementNode;
             size++;
@@ -24,7 +24,7 @@ public class ListQueue<T> implements BasicQueue<T> {
 
     @Override
     public void add(T element) {
-        BasicNode<T> newElementNode = new BasicNode<>(element);
+        SinglyNode<T> newElementNode = new SinglyNode<>(element);
 
         if (isEmpty()) {
             first = newElementNode;
@@ -45,7 +45,7 @@ public class ListQueue<T> implements BasicQueue<T> {
             throw new NoSuchElementException();
         }
 
-        BasicNode<T> remove = first;
+        SinglyNode<T> remove = first;
         first = first.getNext();
         remove.setNext(null);
         size--;

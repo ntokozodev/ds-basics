@@ -1,5 +1,7 @@
 package dev.ntokozos.dsbasics.list;
 
+import dev.ntokozos.dsbasics.common.DoublyNode;
+
 public class DoublyLinkedList<T> implements BasicList<T> {
     private DoublyNode<T> head;
     private DoublyNode<T> tail;

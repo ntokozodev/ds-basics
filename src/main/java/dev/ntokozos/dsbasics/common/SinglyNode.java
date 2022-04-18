@@ -1,10 +1,10 @@
 package dev.ntokozos.dsbasics.common;
 
-public class BasicNode<T> {
+public class SinglyNode<T> {
     private T data;
-    private BasicNode<T> next;
+    private SinglyNode<T> next;
 
-    public BasicNode(T data) {
+    public SinglyNode(T data) {
         this.setData(data);
     }
 
@@ -16,11 +16,11 @@ public class BasicNode<T> {
         this.data = data;
     }
 
-    public BasicNode<T> getNext() {
+    public SinglyNode<T> getNext() {
         return next;
     }
 
-    public void setNext(BasicNode<T> next) {
+    public void setNext(SinglyNode<T> next) {
         this.next = next;
     }
 }

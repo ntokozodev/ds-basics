@@ -2,10 +2,10 @@ package dev.ntokozos.dsbasics.stack;
 
 import java.util.EmptyStackException;
 
-import dev.ntokozos.dsbasics.common.BasicNode;
+import dev.ntokozos.dsbasics.common.SinglyNode;
 
 public class ListStack<T> implements BasicStack<T> {
-    private BasicNode<T> top;
+    private SinglyNode<T> top;
     private int size = 0;
 
     public ListStack() {
@@ -19,7 +19,7 @@ public class ListStack<T> implements BasicStack<T> {
 
     @Override
     public void push(T element) {
-        BasicNode<T> newElement = new BasicNode<>(element);
+        SinglyNode<T> newElement = new SinglyNode<>(element);
         if (isEmpty()) {
             top = newElement;
             size++;
@@ -37,7 +37,7 @@ public class ListStack<T> implements BasicStack<T> {
             throw new EmptyStackException();
         }
 
-        BasicNode<T> pop = top;
+        SinglyNode<T> pop = top;
         top = pop.getNext();
         pop.setNext(null);
         size--;
